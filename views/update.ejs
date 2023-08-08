@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <title>update <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>update <%=shopName%></h1>
+    <p></p><a href='./'>Home</a></p>
+    <form action="/update-result" method="GET">
+      <p>search for food to update</p>
+      <input id="update_box" type="text" name="update_box" value="Default">
+      <input type="submit" value="Search" >
+    </form>
+
+    
+
+    <table>
+      <tr>
+      <th>id</th>
+      <th>food name</th>
+      <th>typical values</th>
+      <th>unit typical value</th>
+      <th>Carbs</th>
+      <th>Fat</th>
+      <th>Protein</th>
+      <th>Salt</th>
+      <th>Sugar</th>
+      </tr>
+      <% if(typeof availablesearchdata !== 'undefined'){%>
+        <% availablesearchdata.forEach(function(data){ %>
+          <tr>
+              <td><%= data.id %></td>
+              <td><%= data.food_name %></td>
+              <td><%= data.typical_values %></td>
+              <td><%= data.unit_typical_values %></td>
+              <td><%= data.Carbs %></td>
+              <td><%= data.Fat %></td>
+              <td><%= data.Protein %></td>
+              <td><%= data.Salt %></td>
+              <td><%= data.Sugar %></td>
+          </tr>
+        <% }) %>
+        <form method="POST" action="/passupdate">
+          <p>type food id number to update: <input id="enterid" type="text" name="enterid" value="" /></p>
+          <input type="submit" value="submit" />
+        </form>
+      <% }%>
+  </table>
+
+
+  
+
+  </body>
+</html>

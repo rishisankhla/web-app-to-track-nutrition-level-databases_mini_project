@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Search <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>Search <%=shopName%></h1>
+    <p></p><a href='./'>Home</a></p>
+    <form action="/search-result" method="GET">
+      <p>search for food here ---</p>
+      <input id="search-box" type="text" name="keyword" value="Default">
+      <input type="submit" value="Search" >
+    </form>
+
+    <ul>
+      <% if(typeof availablesearchdata !== 'undefined'){%>
+      <% availablesearchdata.forEach(function(data) { %>
+        <li>food name: <%=data.food_name %>, typical values: <%=data.typical_values %>,  unit typical value: <%=data.unit_typical_values %>, Carbs: <%=data.Carbs %>, Fat: <%=data.Fat %>, Protein: <%=data.Protein %>, Salt: <%=data.Salt %>, Sugar: <%=data.Sugar %></li>
+      <% }) %>
+      <% }%>
+    </ul>
+
+  </body>
+</html>

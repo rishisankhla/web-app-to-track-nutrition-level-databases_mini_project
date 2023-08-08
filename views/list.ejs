@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <title>List <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>List page of <%=shopName%></h1>
+    <p></p><a href='./'>Home</a></p>
+    
+
+    
+
+    <table>
+      <tr>
+      <th>id</th>
+      <th>food name</th>
+      <th>typical values</th>
+      <th>unit typical value</th>
+      <th>Carbs</th>
+      <th>Fat</th>
+      <th>Protein</th>
+      <th>Salt</th>
+      <th>Sugar</th>
+      </tr>
+      <form method="POST" action="/listform">
+      <% if(typeof availablesearchdata !== 'undefined'){%>
+        <% availablesearchdata.forEach(function(data){ %>
+          <tr>
+              <td><%= data.id %></td>
+              <td><%= data.food_name %></td>
+              <td><%= data.typical_values %></td>
+              <td><%= data.unit_typical_values %></td>
+              <td><%= data.Carbs %></td>
+              <td><%= data.Fat %></td>
+              <td><%= data.Protein %></td>
+              <td><%= data.Salt %></td>
+              <td><%= data.Sugar %></td>
+              
+              <td><input type="checkbox" id="selected" name="selected" value="<%= data.id %>,<%= data.typical_values %>,<%= data.Carbs %>,<%= data.Fat %>,<%= data.Protein %>,<%= data.Salt %>,<%= data.Sugar %>"></td>
+              <td><input type="text" id="input<%= data.id %>" name="input<%= data.id %>" value=""/></td>
+              
+          </tr>
+        <% }) %>
+      <% }%>
+      <input type="submit" value="submit" />
+      </form>
+  </table>
+
+
+  
+
+  </body>
+</html>

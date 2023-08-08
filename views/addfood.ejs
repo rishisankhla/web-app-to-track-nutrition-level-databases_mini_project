@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add book to <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1><%=shopName%>: Add book</h1>
+    <p></p><a href='./'>Home</a></p>
+    <form method="POST" action="/foodadded">
+        <p>name: <input id="name" type="text" name="name" value="" /></p>
+
+        <p>Typical values per: <input id="typical_values" type="text" name="typical_values" value="" /></p>
+        <p>Unit of the typical value: <input id="unit_typical_values" type="text" name="unit_typical_values" value="" /></p>
+        <p>Carbs: <input id="Carbs" type="text" name="Carbs" value="" />g</p>
+        <p>Fat: <input id="Fat" type="text" name="Fat" value="" />g</p>
+        <p>Protein: <input id="Protein" type="text" name="Protein" value="" />g</p>
+        <p>Salt: <input id="Salt" type="text" name="Salt" value="" />g</p>
+        <p>Sugar: <input id="Sugar" type="text" name="Sugar" value="" />g</p>
+
+        
+        <input type="submit" value="Add food" />
+    </form>
+  </body>
+</html>
+

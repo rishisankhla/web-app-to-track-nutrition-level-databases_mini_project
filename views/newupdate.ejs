@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>update <%=shopName%></title>
+    <link rel="stylesheet"  type="text/css" href="main.css" />
+  </head>
+  <body>
+    <h1>update <%=shopName%></h1>
+    <p></p><a href='./'>Home</a></p>
+    
+
+
+    <form method="POST" action="/updatefinal">
+
+      <p>id: <input id="id" type="text" name="id" value="<%= availableupdata.id %>" readonly/></p>
+      <p>name: <input id="name" type="text" name="name" value=<%= availableupdata.food_name %> /></p>
+
+      <p>Typical values per: <input id="typical_values" type="text" name="typical_values" value=<%= availableupdata.typical_values %> /></p>
+      <p>Unit of the typical value: <input id="unit_typical_values" type="text" name="unit_typical_values" value=<%= availableupdata.unit_typical_values %> /></p>
+      <p>Carbs: <input id="Carbs" type="text" name="Carbs" value=<%= availableupdata.Carbs %> />g</p>
+      <p>Fat: <input id="Fat" type="text" name="Fat" value=<%= availableupdata.Fat %> />g</p>
+      <p>Protein: <input id="Protein" type="text" name="Protein" value=<%= availableupdata.Protein %> />g</p>
+      <p>Salt: <input id="Salt" type="text" name="Salt" value=<%= availableupdata.Salt %> />g</p>
+      <p>Sugar: <input id="Sugar" type="text" name="Sugar" value=<%= availableupdata.Sugar %> />g</p>
+
+      
+      <input type="submit" value="update food" />
+    </form>
+    <h1>delete this item:</h1>
+    <form method="POST" action="/deletefinal">
+      <p>id: <input id="id_delete" type="text" name="id_delete" value="<%= availableupdata.id %>" readonly/></p>
+      <input type="submit" value="delete" />
+
+    </form>
+
+  
+
+  </body>
+</html>
